@@ -64,6 +64,29 @@
                     </excludes>
                 </configuration>
             </plugin>
+           <plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <version>2.8.0</version>
+    <configuration>
+        <from>
+            <image>eclipse-temurin:17-jdk</image>
+        </from>
+        <to>
+            <image>registry.hub.docker.com/serdarfirlayis/${project.artifactId}</image>
+        </to>
+        <container>
+            <ports>
+                <port>8080</port>
+            </ports>
+            <jvmFlags>
+                <jvmFlag>-Xms512m</jvmFlag>
+                <jvmFlag>-Xmx1024m</jvmFlag>
+            </jvmFlags>
+        </container>
+    </configuration>
+</plugin>
+
         </plugins>
     </build>
 </project>
